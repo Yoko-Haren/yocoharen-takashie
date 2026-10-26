@@ -1,0 +1,271 @@
+/* ==========================================================================
+   Certifications and achievements, plus the certificate viewer
+   ========================================================================== */
+
+.certs__grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 40em) {
+  .certs__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64em) {
+  .certs__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---- Card --------------------------------------------------------------- */
+
+.cert {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  background: var(--surface);
+  box-shadow: var(--shadow-s);
+  transition: translate var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+}
+
+.cert:hover {
+  translate: 0 -6px;
+  box-shadow: var(--shadow-m);
+}
+
+/* The certificate is shown whole (never cropped) on a soft blush stage */
+.cert__thumb {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(circle at 30% 20%, var(--white), var(--blush) 65%);
+}
+
+.cert__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 18px rgba(45, 51, 107, 0.22));
+  transition: scale 0.6s var(--ease-out);
+}
+
+.cert:hover .cert__thumb img {
+  scale: 1.04;
+}
+
+.cert__zoom {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius-pill);
+  background: var(--navy);
+  color: var(--blush);
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  translate: -50% 0.5rem;
+  transition: opacity var(--dur) var(--ease-out), translate var(--dur) var(--ease-out);
+}
+
+.cert__zoom .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.cert__thumb:hover .cert__zoom,
+.cert__thumb:focus-visible .cert__zoom {
+  opacity: 1;
+  translate: -50% 0;
+}
+
+/* Touch screens have no hover, so the label is always shown */
+@media (hover: none) {
+  .cert__zoom {
+    opacity: 1;
+    translate: -50% 0;
+  }
+}
+
+.cert__thumb:focus-visible {
+  outline-offset: -4px;
+}
+
+/* Medal artwork for the award card */
+.cert__thumb--award {
+  align-content: center;
+  gap: 1.25rem;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(169, 181, 223, 0.45), transparent 62%),
+    var(--navy);
+  color: var(--blush);
+}
+
+.cert__medal {
+  display: grid;
+  place-items: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  background: var(--blush);
+  color: var(--navy);
+  box-shadow: 0 0 0 10px rgba(255, 242, 242, 0.12), 0 0 0 22px rgba(255, 242, 242, 0.05);
+  transition: rotate 0.6s var(--ease-out), scale 0.6s var(--ease-out);
+}
+
+.cert__medal .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.cert:hover .cert__medal {
+  rotate: -10deg;
+  scale: 1.06;
+}
+
+.cert__award-text {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-style: italic;
+}
+
+.cert__body {
+  display: grid;
+  gap: 0.65rem;
+  padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+}
+
+.cert__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.cert__title {
+  font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
+  line-height: 1.25;
+}
+
+.cert__issuer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.cert__issuer .icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.15rem;
+  color: var(--accent-ink);
+}
+
+/* ---- Certificate viewer (native <dialog>) ------------------------------- */
+
+.lightbox {
+  width: min(92vw, 68rem);
+  max-width: none;
+  max-height: none;
+  margin: auto;   /* the global margin reset would otherwise stop the dialog centering */
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+}
+
+.lightbox::backdrop {
+  background: rgba(20, 23, 52, 0.84);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.lightbox[open] {
+  animation: lightbox-in 0.35s var(--ease-out);
+}
+
+.lightbox[open]::backdrop {
+  animation: fade-in 0.35s ease;
+}
+
+.lightbox.is-closing {
+  animation: lightbox-out 0.22s ease forwards;
+}
+
+.lightbox.is-closing::backdrop {
+  animation: fade-out 0.22s ease forwards;
+}
+
+.lightbox__figure {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.lightbox__img {
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 8rem);
+  max-height: calc(100dvh - 8rem);
+  border-radius: var(--radius-s);
+  background: var(--white);
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.7);
+}
+
+.lightbox__caption {
+  max-width: 46rem;
+  font-size: var(--step--1);
+  text-align: center;
+  color: var(--blush);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: -1rem;
+  right: -0.5rem;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--blush);
+  color: var(--navy);
+  box-shadow: var(--shadow-m);
+  transition: rotate var(--dur) var(--ease-out), background-color var(--dur);
+}
+
+.lightbox__close:hover {
+  rotate: 90deg;
+  background: var(--mist);
+}
+
+@keyframes lightbox-in {
+  from { opacity: 0; transform: translateY(1rem) scale(0.96); }
+}
+
+@keyframes lightbox-out {
+  to { opacity: 0; transform: translateY(0.5rem) scale(0.98); }
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}

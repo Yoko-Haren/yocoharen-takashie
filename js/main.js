@@ -10,6 +10,7 @@ import { initReveal } from './modules/reveal.js';
 import { initTimeline } from './modules/timeline.js';
 import { initSkills } from './modules/skills.js';
 import { initTilt } from './modules/tilt.js';
+import { initLightbox } from './modules/lightbox.js';
 
 initNav();
 initTyping();
@@ -17,6 +18,7 @@ initReveal();
 initTimeline();
 initSkills();
 initTilt();
+initLightbox();
 
 // Lets the CSS know scripted animations are in charge from here on.
 document.documentElement.classList.add('js-ready');

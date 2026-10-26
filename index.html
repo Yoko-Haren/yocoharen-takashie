@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/sections/skills.css">
   <link rel="stylesheet" href="css/sections/projects.css">
   <link rel="stylesheet" href="css/sections/experience.css">
+  <link rel="stylesheet" href="css/sections/certifications.css">
   <noscript><style>[data-reveal]{opacity:1!important;transform:none!important;animation:none!important}</style></noscript>
 
   <script type="module" src="js/main.js"></script>
@@ -596,6 +597,70 @@
           </li>
         </ol>
       </div>
+    </section>
+
+    <!-- ==================== Certifications and achievements ==================== -->
+    <section class="section section--tint certs" id="certifications" aria-labelledby="certs-title">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="eyebrow" data-reveal>06 · Certificates &amp; awards</p>
+            <h2 class="section-title" id="certs-title" data-reveal>Proof of <em>progress</em>.</h2>
+          </div>
+          <p class="section-lede" data-reveal>Certifications, trainings and awards I've earned along the way. Select a certificate to see it in full.</p>
+        </header>
+
+        <ul class="certs__grid" role="list" data-stagger="120">
+          <li class="cert" data-reveal>
+            <a class="cert__thumb" href="assets/img/certificates/ccna-srwe-1200.webp" data-lightbox
+               data-caption="CCNA: Switching, Routing, and Wireless Essentials · Cisco Networking Academy, December 2025">
+              <img src="assets/img/certificates/ccna-srwe-640.webp" width="640" height="428" loading="lazy" decoding="async" alt="">
+              <span class="cert__zoom" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg>View certificate</span>
+              <span class="visually-hidden">View the CCNA: Switching, Routing, and Wireless Essentials certificate</span>
+            </a>
+            <div class="cert__body">
+              <p class="cert__meta"><span class="tag">Certification</span>Dec 2025</p>
+              <h3 class="cert__title">CCNA: Switching, Routing, and Wireless Essentials</h3>
+              <p class="cert__issuer"><svg class="icon" aria-hidden="true"><use href="#i-network"/></svg>Cisco Networking Academy, offered by DNSC</p>
+            </div>
+          </li>
+
+          <li class="cert" data-reveal>
+            <a class="cert__thumb" href="assets/img/certificates/ai-capstone-seminar-1600.webp" data-lightbox
+               data-caption="Certificate of Completion · BSIT 413 Series Training: Artificial Intelligence for Innovation of Capstone Project, Institute of Computing, DNSC, September 2026">
+              <img src="assets/img/certificates/ai-capstone-seminar-640.webp" width="640" height="452" loading="lazy" decoding="async" alt="">
+              <span class="cert__zoom" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg>View certificate</span>
+              <span class="visually-hidden">View the Artificial Intelligence for Innovation of Capstone Project seminar certificate</span>
+            </a>
+            <div class="cert__body">
+              <p class="cert__meta"><span class="tag">Seminar</span>Sep 28–29, 2026</p>
+              <h3 class="cert__title">Artificial Intelligence for Innovation of Capstone Projects</h3>
+              <p class="cert__issuer"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg>Advanced Seminar Series, Institute of Computing, DNSC</p>
+            </div>
+          </li>
+
+          <li class="cert" data-reveal>
+            <div class="cert__thumb cert__thumb--award" aria-hidden="true">
+              <span class="cert__medal"><svg class="icon"><use href="#i-award"/></svg></span>
+              <span class="cert__award-text">With Honors</span>
+            </div>
+            <div class="cert__body">
+              <p class="cert__meta"><span class="tag">Academic award</span>2023</p>
+              <h3 class="cert__title">Graduated With Honors</h3>
+              <p class="cert__issuer"><svg class="icon" aria-hidden="true"><use href="#i-graduation"/></svg>Senior High School, STEM Strand, Panabo City National High School</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Certificate viewer, opened by js/modules/lightbox.js -->
+      <dialog class="lightbox" data-lightbox-dialog aria-labelledby="lightbox-caption">
+        <figure class="lightbox__figure">
+          <img class="lightbox__img" alt="">
+          <figcaption class="lightbox__caption" id="lightbox-caption"></figcaption>
+        </figure>
+        <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close certificate"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+      </dialog>
     </section>
   </main>
 </body>
