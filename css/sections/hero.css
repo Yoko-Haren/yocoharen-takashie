@@ -1,0 +1,388 @@
+/* ==========================================================================
+   Hero: name, title, typing line and the arched portrait
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-block: calc(var(--nav-h) + 2.5rem) 5rem;
+  overflow: clip;
+}
+
+/* Soft periwinkle glow with a dotted grid that fades out */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(55rem 38rem at 88% 8%, rgba(169, 181, 223, 0.5), transparent 62%),
+    radial-gradient(40rem 32rem at -5% 105%, rgba(120, 134, 199, 0.2), transparent 60%);
+}
+
+.hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(45, 51, 107, 0.14) 1px, transparent 1.2px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 55% at 28% 45%, #000, transparent 75%);
+  mask-image: radial-gradient(ellipse 60% 55% at 28% 45%, #000, transparent 75%);
+}
+
+.hero__grid {
+  display: grid;
+  gap: clamp(3.5rem, 2rem + 4vw, 5rem);
+  align-items: center;
+}
+
+@media (min-width: 60em) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  }
+}
+
+/* ---- Text column -------------------------------------------------------- */
+
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 1rem 0.45rem 0.85rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.6);
+  font-size: var(--step--1);
+  font-weight: 600;
+}
+
+.pulse {
+  position: relative;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--periwinkle);
+}
+
+.pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  animation: pulse-ring 2.4s var(--ease-out) infinite;
+}
+
+.hero__title {
+  margin-top: 1.6rem;
+  font-size: var(--step-5);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+/* Each line is a mask; the inner span rises into view */
+.hero__hello,
+.hero__line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.hero__hello > span,
+.hero__line > span {
+  display: inline-block;
+}
+
+.hero__hello {
+  margin-bottom: 0.35rem;
+  font-size: var(--step-2);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--accent-ink);
+}
+
+.hero__dot {
+  color: var(--accent);
+}
+
+.hero__role {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.hero__rule {
+  flex: none;
+  width: 3rem;
+  height: 1px;
+  margin-top: 0.85em;
+  background: var(--ink);
+}
+
+.hero__position {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.hero__typed {
+  min-height: 1.35em;
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--accent-ink);
+}
+
+.caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 3px;
+  vertical-align: -0.12em;
+  background: currentColor;
+  animation: blink 1s steps(1) infinite;
+}
+
+.caret.is-typing {
+  animation: none;
+}
+
+.hero__intro {
+  max-width: 34rem;
+  margin-top: 1.5rem;
+  font-size: var(--step-1);
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+  margin-top: 2rem;
+  font-size: var(--step--1);
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.hero__meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero__meta .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--accent-ink);
+}
+
+/* ---- Portrait ----------------------------------------------------------- */
+
+.hero__visual {
+  display: grid;
+  justify-items: center;
+}
+
+.portrait {
+  position: relative;
+  width: min(72vw, 22.5rem);
+}
+
+@media (min-width: 60em) {
+  .hero__visual {
+    justify-items: end;
+  }
+
+  .portrait {
+    width: min(100%, 27.5rem);
+  }
+}
+
+/* A true arch for a 4:5 box: the top corners are half the width wide and
+   40% of the height tall, so they meet in a semicircle. */
+.portrait__frame,
+.portrait__outline {
+  border-radius: 50% 50% var(--radius-l) var(--radius-l) / 40% 40% var(--radius-l) var(--radius-l);
+}
+
+.portrait__frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--mist);
+  box-shadow: var(--shadow-l);
+}
+
+.portrait__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 12%;
+}
+
+.portrait__outline {
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid var(--accent);
+  transform: translate(1.1rem, 1.1rem);
+}
+
+/* Rotating text badge */
+.spin-badge {
+  position: absolute;
+  left: -1.75rem;
+  bottom: 2rem;
+  display: grid;
+  place-items: center;
+  width: 6rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--blush);
+  box-shadow: var(--shadow-m);
+}
+
+.spin-badge svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: spin 22s linear infinite;
+}
+
+.spin-badge text {
+  fill: currentColor;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.spin-badge__core {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--blush);
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+@media (min-width: 37.5em) {
+  .spin-badge {
+    left: -2.5rem;
+    bottom: 2.5rem;
+    width: 7.5rem;
+  }
+
+  .spin-badge__core {
+    width: 2.9rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Floating "now building" card */
+.portrait__card {
+  position: absolute;
+  top: 12%;
+  right: -1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1.1rem 0.7rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: var(--radius-m);
+  background: rgba(255, 255, 255, 0.88);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-m);
+}
+
+@media (min-width: 37.5em) {
+  .portrait__card {
+    right: -2rem;
+  }
+}
+
+.portrait__card-icon {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  aspect-ratio: 1;
+  border-radius: 0.75rem;
+  background: var(--blush-deep);
+  color: var(--accent-ink);
+}
+
+.portrait__card-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.portrait__card-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* ---- Scroll cue (large screens only) ------------------------------------ */
+
+.hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  display: none;
+  justify-items: center;
+  gap: 0.6rem;
+  translate: -50% 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.hero__scroll-line {
+  position: relative;
+  overflow: hidden;
+  width: 1px;
+  height: 2.75rem;
+  background: var(--line-strong);
+}
+
+.hero__scroll-line::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 40%;
+  background: var(--ink);
+  animation: scroll-line 2s var(--ease-in-out) infinite;
+}
+
+@media (min-width: 60em) and (min-height: 46em) {
+  .hero__scroll {
+    display: grid;
+  }
+}
