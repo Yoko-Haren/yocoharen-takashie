@@ -81,24 +81,6 @@
   color: var(--accent-ink);
 }
 
-.tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.6rem;
-  border-radius: var(--radius-pill);
-  background: rgba(169, 181, 223, 0.16);
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.tag--accent {
-  background: var(--blush);
-  color: var(--navy);
-}
-
 .project__title {
   margin-top: 0.9rem;
   font-size: var(--step-3);

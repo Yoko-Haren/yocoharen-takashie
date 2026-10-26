@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Experience: an editorial list of roles, dates on the left
+   ========================================================================== */
+
+.exp-list {
+  border-top: 1px solid var(--line-strong);
+}
+
+.exp {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  gap: 1.25rem;
+  padding-block: clamp(2rem, 1.5rem + 2vw, 3rem);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+@media (min-width: 56em) {
+  .exp {
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 3rem;
+  }
+}
+
+/* Soft highlight behind the row on hover */
+.exp::before {
+  content: "";
+  position: absolute;
+  inset: 0.5rem -1.25rem;
+  z-index: -1;
+  border-radius: var(--radius-l);
+  background: rgba(169, 181, 223, 0.18);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .exp:hover::before {
+    opacity: 1;
+  }
+}
+
+.exp__when {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+@media (min-width: 56em) {
+  .exp__when {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.exp__years {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.exp__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.exp__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.9rem;
+  background: var(--navy);
+  color: var(--blush);
+  transition: rotate var(--dur) var(--ease-out), background-color var(--dur);
+}
+
+.exp:hover .exp__icon {
+  rotate: -8deg;
+  background: var(--periwinkle-ink);
+}
+
+.exp__role {
+  font-size: var(--step-2);
+}
+
+.exp__org {
+  margin-top: 0.35rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.exp__points {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  color: var(--ink-soft);
+}
+
+.exp__points li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.exp__points li::before {
+  content: "";
+  position: absolute;
+  top: 0.7em;
+  left: 0.15rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 1px;
+  background: var(--periwinkle);
+  rotate: 45deg;
+}
+
+@media (min-width: 56em) {
+  .exp__points {
+    padding-left: 4rem;   /* lines the bullets up under the role title */
+  }
+}

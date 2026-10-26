@@ -64,8 +64,8 @@ a {
   text-decoration: none;
 }
 
-ul[role="list"],
-ol[role="list"] {
+/* :where() keeps this at zero specificity so component classes can add padding */
+:where(ul[role="list"], ol[role="list"]) {
   list-style: none;
   padding: 0;
 }

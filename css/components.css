@@ -111,6 +111,27 @@
   width: 100%;
 }
 
+/* ---- Tags: tiny mono labels such as "Featured" or "Freelance" ------------ */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: rgba(169, 181, 223, 0.2);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tag--accent {
+  background: var(--blush);
+  color: var(--navy);
+}
+
 /* ---- Pills: short labels such as year level or awards -------------------- */
 
 .pill-list {
