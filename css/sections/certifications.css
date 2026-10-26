@@ -32,7 +32,7 @@
   box-shadow: var(--shadow-m);
 }
 
-/* The certificate is shown whole (never cropped) on a soft blush stage */
+/* The certificate is shown whole (never cropped) on a soft white stage */
 .cert__thumb {
   position: relative;
   display: grid;
@@ -42,7 +42,7 @@
   padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
   overflow: hidden;
   border-bottom: 1px solid var(--line);
-  background: radial-gradient(circle at 30% 20%, var(--white), var(--blush) 65%);
+  background: radial-gradient(circle at 30% 20%, var(--white), var(--paper) 65%);
 }
 
 .cert__thumb img {
@@ -67,7 +67,7 @@
   padding: 0.5rem 0.95rem;
   border-radius: var(--radius-pill);
   background: var(--navy);
-  color: var(--blush);
+  color: var(--paper);
   font-size: 0.8rem;
   font-weight: 600;
   white-space: nowrap;
@@ -193,7 +193,7 @@
   max-width: 46rem;
   font-size: var(--step--1);
   text-align: center;
-  color: var(--blush);
+  color: var(--paper);
 }
 
 .lightbox__close {
@@ -205,7 +205,7 @@
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
-  background: var(--blush);
+  background: var(--paper);
   color: var(--navy);
   box-shadow: var(--shadow-m);
   transition: rotate var(--dur) var(--ease-out), background-color var(--dur);

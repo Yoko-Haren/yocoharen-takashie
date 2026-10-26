@@ -23,7 +23,7 @@ A personal CV website for **Yocoharen Takashie**, a fourth-year BS Information T
 
 ## Features
 
-- **Editorial design** in a blush, mist, periwinkle and navy palette, with Fraunces headlines and Manrope body text
+- **Editorial design** in a cool white, mist, periwinkle and navy palette, with Fraunces headlines and Manrope body text
 - **Animations:** staggered hero entrance, typing roles, rotating badge, scrolling marquee, scroll reveals, skill bars with counting percentages, a timeline that draws as you scroll, tilting project previews, a certificate viewer, and a back-to-top button whose ring fills as you read
 - **Reduced motion:** every animation turns off for visitors who set "reduce motion" on their device
 - **Responsive:** tested at 320, 375, 414, 768, 1024 and 1440 px wide, with a full-screen menu on phones and tablets
@@ -45,7 +45,8 @@ A personal CV website for **Yocoharen Takashie**, a fourth-year BS Information T
 
 | Color | Hex | Used for |
 |---|---|---|
-| Blush | `#FFF2F2` | Page background, text on navy |
+| Paper | `#F7F8FB` | Page background, text on navy |
+| Paper deep | `#EDEFF6` | Alternate section background |
 | Mist | `#A9B5DF` | Soft accents, bar tracks, highlights on navy |
 | Periwinkle | `#7886C7` | Italic accents, progress bars, details |
 | Navy | `#2D336B` | Text, buttons, dark sections |

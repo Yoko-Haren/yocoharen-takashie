@@ -5,19 +5,19 @@
 
 :root {
   /* ---- Brand palette ------------------------------------------------ */
-  --blush: #FFF2F2;
+  --paper: #F7F8FB;           /* cool white, with a hint of periwinkle */
   --mist: #A9B5DF;
   --periwinkle: #7886C7;
   --navy: #2D336B;
 
   /* Tints and shades derived from the palette */
-  --blush-deep: #FCE7EA;      /* alternate section background */
+  --paper-deep: #EDEFF6;      /* light grey for alternate sections */
   --periwinkle-ink: #5662A8;  /* periwinkle dark enough for small text (AA) */
   --navy-deep: #22274F;       /* footer and pressed states */
   --white: #FFFFFF;
 
   /* ---- Color roles -------------------------------------------------- */
-  --bg: var(--blush);
+  --bg: var(--paper);
   --surface: var(--white);
   --ink: var(--navy);
   --ink-soft: #4A5085;
@@ -27,8 +27,8 @@
   --line-strong: rgba(45, 51, 107, 0.24);
 
   /* On navy surfaces */
-  --on-dark: var(--blush);
-  --on-dark-soft: rgba(255, 242, 242, 0.74);
+  --on-dark: var(--paper);
+  --on-dark-soft: rgba(247, 248, 251, 0.74);
   --line-dark: rgba(169, 181, 223, 0.22);
 
   /* ---- Typography --------------------------------------------------- */
@@ -67,7 +67,7 @@
   --radius-xl: 2rem;
   --radius-pill: 999px;
 
-  /* Shadows are tinted navy so they sit naturally on the blush background */
+  /* Shadows are tinted navy so they sit naturally on the light background */
   --shadow-s: 0 1px 2px rgba(45, 51, 107, 0.06), 0 4px 12px -4px rgba(45, 51, 107, 0.1);
   --shadow-m: 0 2px 4px rgba(45, 51, 107, 0.05), 0 18px 36px -14px rgba(45, 51, 107, 0.2);
   --shadow-l: 0 4px 8px rgba(45, 51, 107, 0.05), 0 32px 64px -24px rgba(45, 51, 107, 0.32);

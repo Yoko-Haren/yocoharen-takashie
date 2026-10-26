@@ -11,7 +11,7 @@
   --btn-fg: var(--ink);
   --btn-border: var(--line-strong);
   --btn-hover-bg: var(--navy);
-  --btn-hover-fg: var(--blush);
+  --btn-hover-fg: var(--paper);
 
   position: relative;
   isolation: isolate;
@@ -75,7 +75,7 @@
 
 .btn--primary {
   --btn-bg: var(--navy);
-  --btn-fg: var(--blush);
+  --btn-fg: var(--paper);
   --btn-border: var(--navy);
   --btn-hover-bg: var(--periwinkle-ink);
   box-shadow: 0 12px 24px -12px rgba(45, 51, 107, 0.6);
@@ -87,17 +87,17 @@
 
 /* For navy backgrounds */
 .btn--light {
-  --btn-bg: var(--blush);
+  --btn-bg: var(--paper);
   --btn-fg: var(--navy);
-  --btn-border: var(--blush);
+  --btn-border: var(--paper);
   --btn-hover-bg: var(--mist);
   --btn-hover-fg: var(--navy);
 }
 
 .btn--outline-light {
-  --btn-fg: var(--blush);
-  --btn-border: rgba(255, 242, 242, 0.35);
-  --btn-hover-bg: var(--blush);
+  --btn-fg: var(--paper);
+  --btn-border: rgba(247, 248, 251, 0.35);
+  --btn-hover-bg: var(--paper);
   --btn-hover-fg: var(--navy);
 }
 
@@ -160,7 +160,7 @@
 }
 
 .tag--accent {
-  background: var(--blush);
+  background: var(--paper);
   color: var(--navy);
 }
 
@@ -194,7 +194,7 @@
 .pill--solid {
   border-color: var(--navy);
   background: var(--navy);
-  color: var(--blush);
+  color: var(--paper);
 }
 
 .pill--award {

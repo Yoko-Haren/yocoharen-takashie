@@ -18,7 +18,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(255, 242, 242, 0.82);
+  background: rgba(247, 248, 251, 0.82);
   -webkit-backdrop-filter: saturate(160%) blur(14px);
   backdrop-filter: saturate(160%) blur(14px);
   box-shadow: 0 1px 0 var(--line);
@@ -152,7 +152,7 @@
     padding: calc(var(--nav-h) + 1.5rem) var(--gutter) 2rem;
     overflow-y: auto;
     background: var(--navy);
-    color: var(--blush);
+    color: var(--paper);
     clip-path: circle(0 at var(--origin));
     visibility: hidden;
     transition: clip-path 0.7s var(--ease-in-out), visibility 0s linear 0.7s;
@@ -212,7 +212,7 @@
   }
 
   .nav__panel-foot a:hover {
-    color: var(--blush);
+    color: var(--paper);
   }
 
   /* Open state */
@@ -245,7 +245,7 @@
   }
 
   .is-menu-open .nav__logo {
-    color: var(--blush);
+    color: var(--paper);
   }
 
   .is-menu-open .nav__toggle {
@@ -254,7 +254,7 @@
   }
 
   .is-menu-open .nav__toggle-bar {
-    background: var(--blush);
+    background: var(--paper);
   }
 
   .is-menu-open .nav__toggle-bar:nth-of-type(2) { transform: rotate(45deg); }

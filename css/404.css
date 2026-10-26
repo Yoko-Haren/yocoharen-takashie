@@ -10,7 +10,7 @@
   padding: 2rem var(--gutter);
   background:
     radial-gradient(50rem 34rem at 85% 0%, rgba(169, 181, 223, 0.5), transparent 62%),
-    var(--blush);
+    var(--paper);
   text-align: center;
 }
 

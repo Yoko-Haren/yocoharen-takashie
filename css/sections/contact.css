@@ -45,7 +45,7 @@
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 0.85rem;
-  background: var(--blush);
+  background: var(--paper);
   color: var(--navy);
 }
 
@@ -87,8 +87,8 @@ a.contact-item__value:hover {
 }
 
 .icon-btn:hover {
-  border-color: var(--blush);
-  background: var(--blush);
+  border-color: var(--paper);
+  background: var(--paper);
   color: var(--navy);
 }
 
@@ -135,7 +135,7 @@ a.contact-item__value:hover {
   gap: 0.9rem;
   padding: 1.25rem;
   border-radius: var(--radius-l);
-  background: var(--blush);
+  background: var(--paper);
   color: var(--navy);
   transition: translate var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
 }
@@ -153,7 +153,7 @@ a.contact-item__value:hover {
   height: 2.75rem;
   border-radius: 0.85rem;
   background: var(--navy);
-  color: var(--blush);
+  color: var(--paper);
 }
 
 .profile-card__text {
@@ -226,7 +226,7 @@ a.contact-item__value:hover {
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-m);
   background: rgba(255, 255, 255, 0.06);
-  color: var(--blush);
+  color: var(--paper);
   font-size: 1rem;   /* 16px stops iOS from zooming into the field */
   transition: border-color var(--dur), background-color var(--dur), box-shadow var(--dur);
 }
@@ -251,18 +251,18 @@ a.contact-item__value:hover {
 
 /* Keep browser autofill on-theme instead of a bright yellow box */
 .field input:-webkit-autofill {
-  -webkit-text-fill-color: var(--blush);
+  -webkit-text-fill-color: var(--paper);
   box-shadow: 0 0 0 100px #3A4079 inset;
-  caret-color: var(--blush);
+  caret-color: var(--paper);
 }
 
 .field [aria-invalid="true"] {
-  border-color: #F8B4C4;
+  border-color: #FCA5A5;
 }
 
 .field__error {
   font-size: 0.8rem;
-  color: #F8B4C4;
+  color: #FCA5A5;
 }
 
 .contact-form__note {

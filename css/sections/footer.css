@@ -6,7 +6,7 @@
   overflow: hidden;
   padding-top: clamp(3.5rem, 3rem + 3vw, 5rem);
   background: var(--navy-deep);
-  color: var(--blush);
+  color: var(--paper);
 }
 
 .footer__top {
@@ -50,7 +50,7 @@
 }
 
 .footer__nav a:hover {
-  color: var(--blush);
+  color: var(--paper);
 }
 
 .socials {
@@ -69,7 +69,7 @@
 }
 
 .socials a:hover {
-  background: var(--blush);
+  background: var(--paper);
   color: var(--navy);
   translate: 0 -3px;
 }
@@ -106,7 +106,7 @@
   align-items: center;
   gap: 0.4rem;
   font-weight: 600;
-  color: var(--blush);
+  color: var(--paper);
 }
 
 .footer__totop .icon {
@@ -133,7 +133,7 @@
   border: 1px solid rgba(169, 181, 223, 0.4);   /* keeps it visible over navy sections */
   border-radius: 50%;
   background: var(--navy);
-  color: var(--blush);
+  color: var(--paper);
   box-shadow: var(--shadow-m);
   opacity: 0;
   visibility: hidden;
@@ -182,7 +182,7 @@
 
 .to-top__ring circle {
   fill: none;
-  stroke: rgba(255, 242, 242, 0.15);
+  stroke: rgba(247, 248, 251, 0.15);
   stroke-width: 2;
 }
 
@@ -205,7 +205,7 @@
   padding: 0.8rem 1.3rem;
   border-radius: var(--radius-pill);
   background: var(--periwinkle-ink);
-  color: var(--blush);
+  color: var(--paper);
   font-size: 0.9rem;
   font-weight: 600;
   box-shadow: var(--shadow-l);

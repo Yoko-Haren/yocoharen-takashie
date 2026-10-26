@@ -53,8 +53,8 @@
   height: 1.1rem;
   border: 2px solid var(--periwinkle);
   border-radius: 50%;
-  background: var(--blush-deep);
-  box-shadow: 0 0 0 5px var(--blush-deep);
+  background: var(--paper-deep);
+  box-shadow: 0 0 0 5px var(--paper-deep);
   translate: -50% 0;
   transition: background-color 0.6s var(--ease-out) 0.3s;
 }

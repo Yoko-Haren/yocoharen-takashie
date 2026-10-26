@@ -14,15 +14,15 @@ main {
   padding-block: var(--section-pad);
 }
 
-/* Slightly deeper blush to separate neighbouring sections */
+/* Light grey to separate neighbouring sections */
 .section--tint {
   --accent: var(--periwinkle-ink);
-  background: var(--blush-deep);
+  background: var(--paper-deep);
 }
 
 /* Navy sections: swapping the color roles restyles every component inside */
 .section--dark {
-  --ink: var(--blush);
+  --ink: var(--paper);
   --ink-soft: var(--on-dark-soft);
   --accent: var(--mist);
   --accent-ink: var(--mist);
@@ -33,7 +33,7 @@ main {
 }
 
 .section--dark ::selection {
-  background: var(--blush);
+  background: var(--paper);
   color: var(--navy);
 }
 
@@ -97,7 +97,7 @@ main {
   overflow: hidden;
   padding-block: 1.4rem;
   background: var(--navy);
-  color: var(--blush);
+  color: var(--paper);
 }
 
 .marquee__track {

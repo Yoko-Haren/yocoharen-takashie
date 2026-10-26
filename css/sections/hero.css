@@ -254,7 +254,7 @@
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--navy);
-  color: var(--blush);
+  color: var(--paper);
   box-shadow: var(--shadow-m);
 }
 
@@ -279,7 +279,7 @@
   width: 2.4rem;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: var(--blush);
+  background: var(--paper);
   color: var(--navy);
   font-family: var(--font-display);
   font-size: 0.95rem;
@@ -332,7 +332,7 @@
   width: 2.4rem;
   aspect-ratio: 1;
   border-radius: 0.75rem;
-  background: var(--blush-deep);
+  background: var(--paper-deep);
   color: var(--accent-ink);
 }
 

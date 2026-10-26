@@ -76,7 +76,7 @@
   height: 3rem;
   border-radius: 0.9rem;
   background: var(--navy);
-  color: var(--blush);
+  color: var(--paper);
   transition: rotate var(--dur) var(--ease-out), background-color var(--dur);
 }
 
