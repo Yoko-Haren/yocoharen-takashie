@@ -1,0 +1,14 @@
+# Original, unoptimized photos and screenshots.
+# The optimized copies the site uses live in assets/img/.
+_originals/
+
+# Local editor and tool settings
+.claude/
+.vscode/
+.idea/
+.vercel/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
