@@ -1,9 +1,9 @@
-# Yocoharen B. Takashie · Curriculum Vitae
+# Yocoharen Takashie · Curriculum Vitae
 
-A personal CV website for **Yocoharen B. Takashie**, a fourth-year BS Information Technology student at Davao del Norte State College. It presents my profile, education, skills, projects, experience and certificates in an editorial design, built with plain HTML, CSS and JavaScript and deployed on Vercel.
+A personal CV website for **Yocoharen Takashie**, a fourth-year BS Information Technology student at Davao del Norte State College. It presents my profile, education, skills, projects, experience and certificates in an editorial design, built with plain HTML, CSS and JavaScript and deployed on Vercel.
 
 - **Live site:** _link added after the first Vercel deployment_
-- **Student:** Yocoharen B. Takashie, BSIT 4th Year, Institute of Computing, Davao del Norte State College
+- **Student:** Yocoharen Takashie, BSIT 4th Year, Institute of Computing, Davao del Norte State College
 - **GitHub:** [@Yoko-Haren](https://github.com/Yoko-Haren) · **LinkedIn:** [Yocoharen Takashie](https://www.linkedin.com/in/yocoharen-takashie-14917a354)
 
 ![The CV on a desktop browser and a phone](docs/preview.jpg)
@@ -93,5 +93,5 @@ The site is a static site with no build step. Vercel deploys it straight from th
 
 ## Author
 
-**Yocoharen B. Takashie**, BS Information Technology, Davao del Norte State College
+**Yocoharen Takashie**, BS Information Technology, Davao del Norte State College
 [GitHub](https://github.com/Yoko-Haren) · [LinkedIn](https://www.linkedin.com/in/yocoharen-takashie-14917a354) · yocoharen24@gmail.com
