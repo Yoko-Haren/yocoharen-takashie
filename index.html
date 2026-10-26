@@ -94,7 +94,6 @@
     <symbol id="i-expand" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M9 21H3v-6"/><path d="m21 3-7 7"/><path d="m3 21 7-7"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
     <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
-    <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
     <symbol id="i-network" viewBox="0 0 24 24"><rect width="6" height="6" x="16" y="16" rx="1"/><rect width="6" height="6" x="2" y="16" rx="1"/><rect width="6" height="6" x="9" y="2" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></symbol>
     <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
   </svg>
@@ -468,7 +467,7 @@
             <p class="eyebrow" data-reveal>04 · Projects</p>
             <h2 class="section-title" id="projects-title" data-reveal>Selected <em>work</em>.</h2>
           </div>
-          <p class="section-lede" data-reveal>From a capstone built for a real partner school to a touchscreen kiosk and a security build, here's what I've been making.</p>
+          <p class="section-lede" data-reveal>From a capstone built for a real partner school to a touchscreen kiosk and an online store, here's what I've been making.</p>
         </header>
 
         <article class="project project--featured" data-reveal>
@@ -546,28 +545,24 @@
               <div class="browser">
                 <div class="browser__bar" aria-hidden="true">
                   <span class="browser__dots"><i></i><i></i><i></i></span>
-                  <span class="browser__url">secure-login · django</span>
+                  <span class="browser__url">monoraaa.vercel.app</span>
                 </div>
-                <div class="hash-demo" role="img" aria-label="Illustration: a password plus a random salt and a secret pepper becomes a PBKDF2 hash">
-                  <span class="hash-demo__lock" aria-hidden="true"><svg class="icon"><use href="#i-lock"/></svg></span>
-                  <div class="hash-demo__rows" aria-hidden="true">
-                    <p><span>password</span>••••••••••••</p>
-                    <p><span>+ salt</span><b class="hash-demo__salt">9f3c1a7e…e47b</b></p>
-                    <p><span>+ pepper</span><b class="hash-demo__pepper">server secret</b></p>
-                  </div>
-                  <p class="hash-demo__out" aria-hidden="true">pbkdf2_sha256$600000$<b>Hx3vQ0bTzK9w…</b><i class="hash-demo__caret"></i></p>
-                </div>
+                <img class="browser__shot" src="assets/img/projects/monora-800.webp"
+                     srcset="assets/img/projects/monora-800.webp 800w, assets/img/projects/monora-1280.webp 1280w"
+                     sizes="(min-width: 48em) 560px, 90vw" width="1280" height="800" loading="lazy" decoding="async"
+                     alt="Monora home page with the headline Designed to be loved beside a white smartphone showing 9:41">
               </div>
             </div>
             <div class="project__body">
-              <p class="project__kicker">Security project · 2026</p>
-              <h3 class="project__title">Secure Registration &amp; Login</h3>
-              <p class="project__desc">A Django sign-up and login system that protects every password with hashing, a unique salt and a secret pepper, so a leaked database alone isn't enough to recover them.</p>
+              <p class="project__kicker">E-commerce web app · 2026</p>
+              <h3 class="project__title">Monora</h3>
+              <p class="project__desc">An online store for Monora, a concept smartphone brand. Shoppers browse the lineup, open product details, fill a bag, check out and track their orders, with accounts protected by bcrypt-hashed passwords and prepared SQL statements.</p>
               <ul class="tech-list" role="list" aria-label="Technologies used">
-                <li>Python</li><li>Django</li><li>PBKDF2</li><li>HTML &amp; CSS</li><li>Gunicorn</li><li>WhiteNoise</li>
+                <li>PHP</li><li>MySQL</li><li>PDO</li><li>JavaScript</li><li>HTML &amp; CSS</li>
               </ul>
               <div class="project__links">
-                <a class="link-arrow" href="https://github.com/Yoko-Haren/arms-project" target="_blank" rel="noopener noreferrer">Source code<svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a>
+                <a class="link-arrow" href="https://monoraaa.vercel.app/" target="_blank" rel="noopener noreferrer">Live site<svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a>
+                <a class="link-arrow" href="https://github.com/Yoko-Haren/monora" target="_blank" rel="noopener noreferrer">Source code<svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a>
               </div>
             </div>
           </article>
