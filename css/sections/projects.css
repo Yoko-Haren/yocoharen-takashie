@@ -1,0 +1,392 @@
+/* ==========================================================================
+   Projects: a featured capstone and two project cards on navy
+   ========================================================================== */
+
+/* ---- Browser-window frame around each preview --------------------------- */
+
+.project__media {
+  transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.6s var(--ease-out);
+}
+
+.browser {
+  overflow: hidden;
+  border-radius: var(--radius-m);
+  background: var(--white);
+  box-shadow: 0 30px 60px -30px rgba(10, 12, 40, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.browser__bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 2.25rem;
+  padding-inline: 0.9rem;
+  border-bottom: 1px solid rgba(45, 51, 107, 0.08);
+  background: #ECEEF7;
+}
+
+.browser__dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.browser__dots i {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--mist);
+}
+
+.browser__dots i:nth-child(2) { background: var(--periwinkle); }
+.browser__dots i:nth-child(3) { background: var(--navy); }
+
+.browser__url {
+  flex: 1;
+  max-width: 20rem;
+  margin-right: auto;
+  padding: 0.15rem 0.8rem;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: #5A5F8A;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.browser__shot {
+  width: 100%;
+  transition: scale 0.8s var(--ease-out);
+}
+
+.project:hover .browser__shot {
+  scale: 1.035;
+}
+
+/* ---- Shared text styles ------------------------------------------------- */
+
+.project__kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: rgba(169, 181, 223, 0.16);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tag--accent {
+  background: var(--blush);
+  color: var(--navy);
+}
+
+.project__title {
+  margin-top: 0.9rem;
+  font-size: var(--step-3);
+}
+
+.project__desc {
+  margin-top: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+.tech-list li {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+  background: rgba(169, 181, 223, 0.1);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.project__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.75rem;
+}
+
+/* Text link with an underline and an arrow that nudges up and right */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding-bottom: 0.15rem;
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 100% 1px;
+  font-weight: 600;
+  transition: color var(--dur-fast), background-size var(--dur) var(--ease-out);
+}
+
+.link-arrow .icon {
+  width: 1rem;
+  height: 1rem;
+  transition: translate var(--dur) var(--ease-out);
+}
+
+.link-arrow:hover {
+  color: var(--accent);
+  background-size: 0 1px;
+}
+
+.link-arrow:hover .icon {
+  translate: 2px -2px;
+}
+
+/* ---- Featured project --------------------------------------------------- */
+
+.project--featured {
+  display: grid;
+  gap: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+  align-items: center;
+  padding: clamp(1.25rem, 0.75rem + 2vw, 2.75rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+@media (min-width: 64em) {
+  .project--featured {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  }
+}
+
+.project__visual {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Key figures under the featured screenshot; the number sits above its label */
+.project__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.project__stats div {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.project__stats dd {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  line-height: 1;
+}
+
+.project__stats dt {
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+}
+
+.project--featured .project__title {
+  font-size: clamp(3rem, 2rem + 4vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.project__subtitle {
+  margin-top: 0.5rem;
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-style: italic;
+  color: var(--accent);
+}
+
+.project__highlights {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.project__highlights li {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.project__highlights li::before {
+  content: "";
+  flex: none;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-top: 0.6em;
+  border-radius: 1px;
+  background: var(--mist);
+  rotate: 45deg;
+}
+
+.project__role {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-weight: 700;
+}
+
+.project__role span {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---- Project cards ------------------------------------------------------ */
+
+.projects__grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 48em) {
+  .projects__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.project--card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1rem, 0.75rem + 1vw, 1.5rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.04);
+  transition:
+    translate var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out),
+    background-color var(--dur) var(--ease-out);
+}
+
+.project--card:hover {
+  translate: 0 -6px;
+  border-color: rgba(169, 181, 223, 0.45);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.project--card .project__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.5rem 0.5rem 0.5rem;
+}
+
+.project--card .project__links {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+/* ---- Password hashing illustration (secure login card) ------------------ */
+
+.hash-demo {
+  position: relative;
+  display: grid;
+  align-content: center;
+  gap: 1.1rem;
+  aspect-ratio: 16 / 10;
+  padding: clamp(1.25rem, 0.75rem + 2vw, 2rem);
+  overflow: hidden;
+  background:
+    radial-gradient(22rem 14rem at 100% 0%, rgba(120, 134, 199, 0.35), transparent 70%),
+    var(--navy-deep);
+  color: var(--blush);
+  font-family: var(--font-mono);
+  font-size: clamp(0.7rem, 0.62rem + 0.35vw, 0.85rem);
+}
+
+.hash-demo__lock {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.8rem;
+  background: rgba(169, 181, 223, 0.16);
+  color: var(--mist);
+}
+
+.hash-demo__rows {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.hash-demo__rows p {
+  display: flex;
+  gap: 1rem;
+}
+
+.hash-demo__rows span {
+  width: 5.5rem;
+  flex: none;
+  color: rgba(255, 242, 242, 0.55);
+}
+
+.hash-demo b {
+  font-weight: 500;
+}
+
+.hash-demo__salt { color: var(--mist); }
+.hash-demo__pepper { color: #F5B8C4; }
+
+.hash-demo__out {
+  padding: 0.8rem 1rem;
+  overflow: hidden;
+  border: 1px dashed rgba(169, 181, 223, 0.4);
+  border-radius: var(--radius-s);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: rgba(255, 242, 242, 0.75);
+}
+
+.hash-demo__out b {
+  color: var(--blush);
+}
+
+.hash-demo__caret {
+  display: inline-block;
+  width: 0.5em;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: var(--mist);
+  animation: blink 1s steps(1) infinite;
+}

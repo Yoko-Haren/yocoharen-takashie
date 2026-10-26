@@ -76,24 +76,27 @@
 
 /* ---- Scroll reveal ------------------------------------------------------
    Hidden until js/modules/reveal.js marks the element visible. If the
-   script never runs, the delayed failsafe animation shows it anyway. */
+   script never runs, the delayed failsafe animation shows it anyway.
+   This uses keyframes rather than transitions so it never overrides a
+   card's own hover transitions (cards lift with `translate`, not
+   `transform`, for the same reason). */
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(2rem); }
+  to { opacity: 1; transform: none; }
+}
 
 [data-reveal] {
   opacity: 0;
-  transform: translateY(1.75rem);
-  animation: fade-up 0.8s var(--ease-out) 2.5s forwards;
+  animation: reveal-up 0.8s var(--ease-out) 2.5s both;
 }
 
 .js-ready [data-reveal] {
   animation: none;
-  transition:
-    opacity 0.9s var(--ease-out) var(--reveal-delay, 0ms),
-    transform 0.9s var(--ease-out) var(--reveal-delay, 0ms);
 }
 
 .js-ready [data-reveal].is-visible {
-  opacity: 1;
-  transform: none;
+  animation: reveal-up 0.9s var(--ease-out) var(--reveal-delay, 0ms) both;
 }
 
 /* ---- Respect people who prefer less motion ------------------------------ */

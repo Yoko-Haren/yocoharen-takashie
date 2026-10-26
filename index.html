@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/sections/about.css">
   <link rel="stylesheet" href="css/sections/education.css">
   <link rel="stylesheet" href="css/sections/skills.css">
+  <link rel="stylesheet" href="css/sections/projects.css">
   <noscript><style>[data-reveal]{opacity:1!important;transform:none!important;animation:none!important}</style></noscript>
 
   <script type="module" src="js/main.js"></script>
@@ -420,6 +421,121 @@
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Projects ==================== -->
+    <section class="section section--dark projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="eyebrow" data-reveal>04 · Projects</p>
+            <h2 class="section-title" id="projects-title" data-reveal>Selected <em>work</em>.</h2>
+          </div>
+          <p class="section-lede" data-reveal>From a capstone built for a real partner school to a touchscreen kiosk and a security build, here's what I've been making.</p>
+        </header>
+
+        <article class="project project--featured" data-reveal>
+          <div class="project__visual">
+            <div class="project__media" data-tilt>
+              <div class="browser">
+                <div class="browser__bar" aria-hidden="true">
+                  <span class="browser__dots"><i></i><i></i><i></i></span>
+                  <span class="browser__url">arms-pi-two.vercel.app</span>
+                </div>
+                <img class="browser__shot" src="assets/img/projects/arms-1280.webp"
+                     srcset="assets/img/projects/arms-800.webp 800w, assets/img/projects/arms-1280.webp 1280w"
+                     sizes="(min-width: 64em) 620px, 90vw" width="1280" height="655" loading="lazy" decoding="async"
+                     alt="ARMS home page with the headline Every grade, accounted for, beside a photo of graduating students">
+              </div>
+            </div>
+            <dl class="project__stats">
+              <div><dt>Role-based portals</dt><dd>4</dd></div>
+              <div><dt>Grade levels, 7 to 12</dt><dd>6</dd></div>
+              <div><dt>DepEd grading orders</dt><dd>2</dd></div>
+            </dl>
+          </div>
+
+          <div class="project__body">
+            <p class="project__kicker"><span class="tag tag--accent">Featured</span>Capstone project · 2026</p>
+            <h3 class="project__title">ARMS</h3>
+            <p class="project__subtitle">Academic Records Management System</p>
+            <p class="project__desc">An AI-enabled academic records system for Northern Paramedical &amp; Technological College of Panabo (NPTCI). Teachers upload class records, ARMS checks every grade against DepEd rules, the registrar validates them, and school heads see clear dashboards and forecasts.</p>
+            <ul class="project__highlights" role="list">
+              <li>Four role-based portals: Administrator, School Head, Registrar and Teacher</li>
+              <li>An XGBoost grade forecaster that predicts the next grading periods with a 90% likely range</li>
+              <li>Poro AI, a local language model run through Ollama, rewrites each class brief in plain words</li>
+            </ul>
+            <p class="project__role"><span>My role</span>Lead Full-Stack Developer</p>
+            <ul class="tech-list" role="list" aria-label="Technologies used">
+              <li>Python</li><li>Django</li><li>PostgreSQL</li><li>Supabase</li><li>XGBoost</li><li>scikit-learn</li><li>Chart.js</li><li>JavaScript</li><li>Ollama</li>
+            </ul>
+            <div class="project__links">
+              <a class="btn btn--light" href="https://arms-pi-two.vercel.app/" target="_blank" rel="noopener noreferrer">Live site<svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a>
+              <a class="btn btn--outline-light" href="https://github.com/Yoko-Haren/arms" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Source code<span class="visually-hidden"> (opens in a new tab)</span></a>
+            </div>
+          </div>
+        </article>
+
+        <div class="projects__grid" data-stagger="140">
+          <article class="project project--card" data-reveal>
+            <div class="project__media" data-tilt>
+              <div class="browser">
+                <div class="browser__bar" aria-hidden="true">
+                  <span class="browser__dots"><i></i><i></i><i></i></span>
+                  <span class="browser__url">midterm-exam-puce.vercel.app</span>
+                </div>
+                <img class="browser__shot" src="assets/img/projects/pos-kiosk-800.webp"
+                     srcset="assets/img/projects/pos-kiosk-800.webp 800w, assets/img/projects/pos-kiosk-1280.webp 1280w"
+                     sizes="(min-width: 48em) 560px, 90vw" width="1280" height="800" loading="lazy" decoding="async"
+                     alt="Campus Store POS kiosk showing a menu of coffee, sandwiches and snacks beside an order totalling 120 pesos">
+              </div>
+            </div>
+            <div class="project__body">
+              <p class="project__kicker">Midterm project · 2026</p>
+              <h3 class="project__title">Campus Store POS Kiosk</h3>
+              <p class="project__desc">A touchscreen self-service kiosk for a campus food outlet. Customers tap to order, pay by cash, QR or card (simulated), and get a digital receipt before the kiosk resets for the next person.</p>
+              <ul class="tech-list" role="list" aria-label="Technologies used">
+                <li>React</li><li>TypeScript</li><li>Vite</li><li>Zustand</li><li>Tailwind CSS</li><li>Vitest</li>
+              </ul>
+              <div class="project__links">
+                <a class="link-arrow" href="https://midterm-exam-puce.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo<svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a>
+                <a class="link-arrow" href="https://github.com/Yoko-Haren/midterm-exam" target="_blank" rel="noopener noreferrer">Source code<svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project project--card" data-reveal>
+            <div class="project__media" data-tilt>
+              <div class="browser">
+                <div class="browser__bar" aria-hidden="true">
+                  <span class="browser__dots"><i></i><i></i><i></i></span>
+                  <span class="browser__url">secure-login · django</span>
+                </div>
+                <div class="hash-demo" role="img" aria-label="Illustration: a password plus a random salt and a secret pepper becomes a PBKDF2 hash">
+                  <span class="hash-demo__lock" aria-hidden="true"><svg class="icon"><use href="#i-lock"/></svg></span>
+                  <div class="hash-demo__rows" aria-hidden="true">
+                    <p><span>password</span>••••••••••••</p>
+                    <p><span>+ salt</span><b class="hash-demo__salt">9f3c1a7e…e47b</b></p>
+                    <p><span>+ pepper</span><b class="hash-demo__pepper">server secret</b></p>
+                  </div>
+                  <p class="hash-demo__out" aria-hidden="true">pbkdf2_sha256$600000$<b>Hx3vQ0bTzK9w…</b><i class="hash-demo__caret"></i></p>
+                </div>
+              </div>
+            </div>
+            <div class="project__body">
+              <p class="project__kicker">Security project · 2026</p>
+              <h3 class="project__title">Secure Registration &amp; Login</h3>
+              <p class="project__desc">A Django sign-up and login system that protects every password with hashing, a unique salt and a secret pepper, so a leaked database alone isn't enough to recover them.</p>
+              <ul class="tech-list" role="list" aria-label="Technologies used">
+                <li>Python</li><li>Django</li><li>PBKDF2</li><li>HTML &amp; CSS</li><li>Gunicorn</li><li>WhiteNoise</li>
+              </ul>
+              <div class="project__links">
+                <a class="link-arrow" href="https://github.com/Yoko-Haren/arms-project" target="_blank" rel="noopener noreferrer">Source code<svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
