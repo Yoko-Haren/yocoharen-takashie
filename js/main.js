@@ -11,6 +11,9 @@ import { initTimeline } from './modules/timeline.js';
 import { initSkills } from './modules/skills.js';
 import { initTilt } from './modules/tilt.js';
 import { initLightbox } from './modules/lightbox.js';
+import { initContact } from './modules/contact.js';
+import { initGitHubStats } from './modules/github.js';
+import { initBackToTop } from './modules/back-to-top.js';
 
 initNav();
 initTyping();
@@ -19,6 +22,9 @@ initTimeline();
 initSkills();
 initTilt();
 initLightbox();
+initContact();
+initGitHubStats();
+initBackToTop();
 
 // Lets the CSS know scripted animations are in charge from here on.
 document.documentElement.classList.add('js-ready');

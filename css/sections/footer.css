@@ -1,0 +1,220 @@
+/* ==========================================================================
+   Footer, floating back-to-top button and toast messages
+   ========================================================================== */
+
+.site-footer {
+  overflow: hidden;
+  padding-top: clamp(3.5rem, 3rem + 3vw, 5rem);
+  background: var(--navy-deep);
+  color: var(--blush);
+}
+
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.footer__logo span {
+  color: var(--mist);
+}
+
+.footer__brand p {
+  margin-top: 0.85rem;
+  font-size: 0.9rem;
+  color: var(--on-dark-soft);
+}
+
+.footer__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  max-width: 30rem;
+}
+
+.footer__nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--on-dark-soft);
+  transition: color var(--dur-fast);
+}
+
+.footer__nav a:hover {
+  color: var(--blush);
+}
+
+.socials {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.socials a {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line-dark);
+  border-radius: 50%;
+  transition: background-color var(--dur), color var(--dur), translate var(--dur) var(--ease-out);
+}
+
+.socials a:hover {
+  background: var(--blush);
+  color: var(--navy);
+  translate: 0 -3px;
+}
+
+/* Oversized outlined surname as a sign-off */
+.footer__wordmark {
+  margin-top: clamp(2rem, 1rem + 4vw, 3.5rem);
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 21vw, 17rem);
+  font-weight: 500;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  text-align: center;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(169, 181, 223, 0.38);
+  user-select: none;
+}
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.5rem 2rem;
+  border-top: 1px solid var(--line-dark);
+  font-size: 0.85rem;
+  color: var(--on-dark-soft);
+}
+
+.footer__totop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: var(--blush);
+}
+
+.footer__totop .icon {
+  width: 1rem;
+  height: 1rem;
+  transition: translate var(--dur) var(--ease-out);
+}
+
+.footer__totop:hover .icon {
+  translate: 0 -3px;
+}
+
+/* ---- Floating back-to-top button ---------------------------------------- */
+
+.to-top {
+  position: fixed;
+  right: clamp(1rem, 2vw, 2rem);
+  bottom: clamp(1rem, 2vw, 2rem);
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--blush);
+  box-shadow: var(--shadow-m);
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 1rem;
+  transition:
+    opacity var(--dur) var(--ease-out),
+    translate var(--dur) var(--ease-out),
+    background-color var(--dur),
+    visibility 0s linear var(--dur);
+}
+
+.to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  translate: 0 0;
+  transition:
+    opacity var(--dur) var(--ease-out),
+    translate var(--dur) var(--ease-out),
+    background-color var(--dur),
+    visibility 0s;
+}
+
+.to-top:hover {
+  background: var(--periwinkle-ink);
+}
+
+.to-top > * {
+  grid-area: 1 / 1;
+}
+
+.to-top .icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: translate var(--dur) var(--ease-out);
+}
+
+.to-top:hover .icon {
+  translate: 0 -2px;
+}
+
+.to-top__ring {
+  width: 100%;
+  height: 100%;
+  rotate: -90deg;
+}
+
+.to-top__ring circle {
+  fill: none;
+  stroke: rgba(255, 242, 242, 0.15);
+  stroke-width: 2;
+}
+
+/* r = 22, so the circumference is 2 * pi * 22 = 138.23 */
+.to-top__ring .to-top__progress {
+  stroke: var(--mist);
+  stroke-linecap: round;
+  stroke-dasharray: 138.23px;
+  stroke-dashoffset: calc(138.23px * (1 - var(--scroll, 0)));
+}
+
+/* ---- Toast -------------------------------------------------------------- */
+
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  z-index: 60;
+  max-width: calc(100vw - 2rem);
+  padding: 0.8rem 1.3rem;
+  border-radius: var(--radius-pill);
+  background: var(--periwinkle-ink);
+  color: var(--blush);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-l);
+  opacity: 0;
+  translate: -50% 1rem;
+  pointer-events: none;
+  transition: opacity var(--dur) var(--ease-out), translate var(--dur) var(--ease-out);
+}
+
+.toast.is-visible {
+  opacity: 1;
+  translate: -50% 0;
+}

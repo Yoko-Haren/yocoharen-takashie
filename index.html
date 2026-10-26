@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="css/sections/projects.css">
   <link rel="stylesheet" href="css/sections/experience.css">
   <link rel="stylesheet" href="css/sections/certifications.css">
+  <link rel="stylesheet" href="css/sections/contact.css">
+  <link rel="stylesheet" href="css/sections/footer.css">
   <noscript><style>[data-reveal]{opacity:1!important;transform:none!important;animation:none!important}</style></noscript>
 
   <script type="module" src="js/main.js"></script>
@@ -662,6 +664,146 @@
         <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close certificate"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
       </dialog>
     </section>
+
+    <!-- ==================== Contact, GitHub and LinkedIn ==================== -->
+    <section class="section section--dark contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="eyebrow" data-reveal>07 · Contact</p>
+            <h2 class="section-title" id="contact-title" data-reveal>Let's build something <em>together</em>.</h2>
+          </div>
+          <p class="section-lede" data-reveal>I'm open to internships, junior developer roles and freelance projects. Send me a message, or find me on GitHub and LinkedIn.</p>
+        </header>
+
+        <div class="contact__grid">
+          <div class="contact__info" data-reveal>
+            <ul class="contact-list" role="list">
+              <li class="contact-item">
+                <span class="contact-item__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+                <span class="contact-item__text">
+                  <span class="contact-item__label">Email</span>
+                  <a class="contact-item__value" href="mailto:yocoharen24@gmail.com">yocoharen24@gmail.com</a>
+                </span>
+                <button class="icon-btn" type="button" data-copy="yocoharen24@gmail.com" aria-label="Copy email address">
+                  <svg class="icon icon-btn__copy" aria-hidden="true"><use href="#i-copy"/></svg>
+                  <svg class="icon icon-btn__done" aria-hidden="true"><use href="#i-check"/></svg>
+                </button>
+              </li>
+              <li class="contact-item">
+                <span class="contact-item__icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
+                <span class="contact-item__text">
+                  <span class="contact-item__label">Phone</span>
+                  <a class="contact-item__value" href="tel:+639922768218">+63 992 276 8218</a>
+                </span>
+                <button class="icon-btn" type="button" data-copy="+63 992 276 8218" aria-label="Copy phone number">
+                  <svg class="icon icon-btn__copy" aria-hidden="true"><use href="#i-copy"/></svg>
+                  <svg class="icon icon-btn__done" aria-hidden="true"><use href="#i-check"/></svg>
+                </button>
+              </li>
+              <li class="contact-item">
+                <span class="contact-item__icon"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg></span>
+                <span class="contact-item__text">
+                  <span class="contact-item__label">Location</span>
+                  <span class="contact-item__value">Davao City, Philippines</span>
+                </span>
+              </li>
+            </ul>
+
+            <div class="profiles">
+              <a class="profile-card" href="https://github.com/Yoko-Haren" target="_blank" rel="noopener noreferrer">
+                <span class="profile-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></span>
+                <span class="profile-card__text">
+                  <span class="profile-card__label">GitHub</span>
+                  <span class="profile-card__handle">@Yoko-Haren</span>
+                  <span class="profile-card__note" data-github-repos>7 public repositories</span>
+                </span>
+                <svg class="icon profile-card__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                <span class="visually-hidden"> (opens in a new tab)</span>
+              </a>
+              <a class="profile-card" href="https://www.linkedin.com/in/yocoharen-takashie-14917a354" target="_blank" rel="noopener noreferrer">
+                <span class="profile-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></span>
+                <span class="profile-card__text">
+                  <span class="profile-card__label">LinkedIn</span>
+                  <span class="profile-card__handle">Yocoharen Takashie</span>
+                  <span class="profile-card__note">Let's connect</span>
+                </span>
+                <svg class="icon profile-card__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+                <span class="visually-hidden"> (opens in a new tab)</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form" data-contact-form data-to="yocoharen24@gmail.com" novalidate data-reveal>
+            <h3 class="contact-form__title">Send a message</h3>
+            <div class="field">
+              <label for="cf-name">Your name</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="cf-name-error">
+              <p class="field__error" id="cf-name-error" hidden>Please enter your name.</p>
+            </div>
+            <div class="field">
+              <label for="cf-email">Your email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required aria-describedby="cf-email-error">
+              <p class="field__error" id="cf-email-error" hidden>Please enter a valid email address.</p>
+            </div>
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" required aria-describedby="cf-message-error"></textarea>
+              <p class="field__error" id="cf-message-error" hidden>Please write a short message.</p>
+            </div>
+            <button class="btn btn--light btn--block" type="submit">Send message<svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></button>
+            <p class="contact-form__note">This opens your email app with your message ready to send.</p>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="footer__logo" href="#top" aria-label="Back to top">YT<span aria-hidden="true">.</span></a>
+          <p>Yocoharen B. Takashie<br>BS Information Technology Student · Davao City, Philippines</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer">
+          <ul role="list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <ul class="socials" role="list">
+          <li><a href="https://github.com/Yoko-Haren" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/in/yocoharen-takashie-14917a354" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+          <li><a href="mailto:yocoharen24@gmail.com" aria-label="Email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+        </ul>
+      </div>
+
+      <p class="footer__wordmark" aria-hidden="true">Takashie</p>
+
+      <div class="footer__bottom">
+        <p>© 2026 Yocoharen B. Takashie. Designed and built with HTML, CSS and JavaScript.</p>
+        <a class="footer__totop" href="#top">Back to top<svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating back-to-top button; its ring fills as you scroll -->
+  <a class="to-top" href="#top" data-to-top aria-label="Back to top">
+    <svg class="to-top__ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="22"/>
+      <circle class="to-top__progress" cx="24" cy="24" r="22"/>
+    </svg>
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+  </a>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
 </body>
 </html>
