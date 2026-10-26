@@ -1,0 +1,191 @@
+/* ==========================================================================
+   About: personal description, career objective and basic information
+   ========================================================================== */
+
+.about__grid {
+  display: grid;
+  gap: clamp(2.5rem, 2rem + 3vw, 4.5rem);
+  align-items: start;
+}
+
+@media (min-width: 60em) {
+  .about__grid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  }
+}
+
+.about__story {
+  display: grid;
+  gap: 1.35rem;
+  max-width: 40rem;
+  font-size: var(--step-1);
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.about__lead {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+/* ---- Career objective --------------------------------------------------- */
+
+.objective {
+  position: relative;
+  overflow: hidden;
+  margin-top: 0.75rem;
+  padding: clamp(1.5rem, 1rem + 2vw, 2.25rem);
+  border: 1px solid rgba(120, 134, 199, 0.28);
+  border-radius: var(--radius-l);
+  background: linear-gradient(135deg, rgba(169, 181, 223, 0.4), rgba(169, 181, 223, 0.12));
+}
+
+/* Oversized quotation mark in the corner */
+.objective::after {
+  content: "\201C";
+  position: absolute;
+  top: 0.25rem;
+  right: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 7rem;
+  line-height: 1;
+  color: rgba(120, 134, 199, 0.28);
+  pointer-events: none;
+}
+
+.objective__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+.objective__label .icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.objective__text {
+  position: relative;
+  margin-top: 0.9rem;
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+/* ---- Basic information card --------------------------------------------- */
+
+.info-card {
+  padding: clamp(1.5rem, 1rem + 2vw, 2.25rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  background: var(--surface);
+  box-shadow: var(--shadow-m);
+}
+
+@media (min-width: 60em) {
+  .info-card {
+    position: sticky;
+    top: calc(var(--nav-h) + 1.5rem);
+  }
+}
+
+.info-card__title {
+  font-size: var(--step-2);
+}
+
+.info-list {
+  margin-top: 1rem;
+}
+
+.info-list__row {
+  display: grid;
+  grid-template-columns: 6.75rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 0.85rem;
+  border-bottom: 1px dashed var(--line-strong);
+}
+
+.info-list dt {
+  padding-top: 0.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.info-list dd {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* Underline that draws in on hover */
+.info-list a {
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0 1px;
+  transition: background-size var(--dur) var(--ease-out), color var(--dur-fast);
+}
+
+.info-list a:hover {
+  color: var(--accent-ink);
+  background-size: 100% 1px;
+}
+
+@media (max-width: 30em) {
+  .info-list__row {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
+.info-card__subtitle {
+  margin-top: 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+.interests {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+.interest {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: var(--blush);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.25;
+  transition: translate var(--dur) var(--ease-out), background-color var(--dur), border-color var(--dur);
+}
+
+.interest:hover {
+  translate: 0 -2px;
+  border-color: rgba(120, 134, 199, 0.5);
+  background: var(--white);
+}
+
+.interest .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--accent-ink);
+}

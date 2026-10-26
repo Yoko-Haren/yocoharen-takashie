@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Layout: section spacing, section headings and the section themes
+   ========================================================================== */
+
+.section {
+  position: relative;
+  padding-block: var(--section-pad);
+}
+
+/* Slightly deeper blush to separate neighbouring sections */
+.section--tint {
+  --accent: var(--periwinkle-ink);
+  background: var(--blush-deep);
+}
+
+/* Navy sections: swapping the color roles restyles every component inside */
+.section--dark {
+  --ink: var(--blush);
+  --ink-soft: var(--on-dark-soft);
+  --accent: var(--mist);
+  --accent-ink: var(--mist);
+  --line: var(--line-dark);
+  --line-strong: rgba(169, 181, 223, 0.36);
+  background: var(--navy);
+  color: var(--ink);
+}
+
+.section--dark ::selection {
+  background: var(--blush);
+  color: var(--navy);
+}
+
+/* ---- Section heading ---------------------------------------------------- */
+
+.section-head {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: clamp(2.75rem, 2rem + 3vw, 4.5rem);
+}
+
+@media (min-width: 60em) {
+  .section-head--split {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    align-items: end;
+    column-gap: 4rem;
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 2.25rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.section-title {
+  margin-top: 1rem;
+  max-width: 18ch;
+  font-size: var(--step-4);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.section-lede {
+  max-width: 32rem;
+  color: var(--ink-soft);
+  font-size: var(--step-1);
+  line-height: 1.6;
+}
+
+/* ---- Marquee band between the hero and About ---------------------------- */
+
+.marquee {
+  overflow: hidden;
+  padding-block: 1.4rem;
+  background: var(--navy);
+  color: var(--blush);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+/* Two identical groups: moving the track by half its width loops seamlessly */
+.marquee__group {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  padding-right: 2.25rem;
+}
+
+.marquee__item {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-style: italic;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.marquee__star {
+  font-size: 1rem;
+  color: var(--mist);
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}

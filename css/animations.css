@@ -74,9 +74,36 @@
 .portrait__card { animation: fade-up 1s var(--ease-out) 1.3s both, float 6s ease-in-out 2.3s infinite; }
 .hero__scroll { animation: fade-in 1s ease 1.6s both; }
 
+/* ---- Scroll reveal ------------------------------------------------------
+   Hidden until js/modules/reveal.js marks the element visible. If the
+   script never runs, the delayed failsafe animation shows it anyway. */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(1.75rem);
+  animation: fade-up 0.8s var(--ease-out) 2.5s forwards;
+}
+
+.js-ready [data-reveal] {
+  animation: none;
+  transition:
+    opacity 0.9s var(--ease-out) var(--reveal-delay, 0ms),
+    transform 0.9s var(--ease-out) var(--reveal-delay, 0ms);
+}
+
+.js-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
 /* ---- Respect people who prefer less motion ------------------------------ */
 
 @media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   *,
   *::before,
   *::after {

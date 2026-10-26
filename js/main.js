@@ -6,9 +6,11 @@
  */
 import { initNav } from './modules/nav.js';
 import { initTyping } from './modules/typing.js';
+import { initReveal } from './modules/reveal.js';
 
 initNav();
 initTyping();
+initReveal();
 
 // Lets the CSS know scripted animations are in charge from here on.
 document.documentElement.classList.add('js-ready');

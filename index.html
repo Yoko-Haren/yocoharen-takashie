@@ -16,10 +16,13 @@
 
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/sections/header.css">
   <link rel="stylesheet" href="css/sections/hero.css">
+  <link rel="stylesheet" href="css/sections/about.css">
+  <noscript><style>[data-reveal]{opacity:1!important;transform:none!important;animation:none!important}</style></noscript>
 
   <script type="module" src="js/main.js"></script>
 </head>
@@ -161,6 +164,74 @@
       </div>
 
       <a class="hero__scroll" href="#about"><span>Scroll</span><span class="hero__scroll-line" aria-hidden="true"></span></a>
+    </section>
+
+    <!-- Decorative band of focus areas; the same content appears in Skills -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span class="marquee__item">Full-Stack Development</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">UI/UX Design</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">Cybersecurity</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">Python &amp; Django</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">React &amp; TypeScript</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">Machine Learning</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">Networking</span><span class="marquee__star">✦</span>
+        </div>
+        <div class="marquee__group">
+          <span class="marquee__item">Full-Stack Development</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">UI/UX Design</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">Cybersecurity</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">Python &amp; Django</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">React &amp; TypeScript</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">Machine Learning</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">Networking</span><span class="marquee__star">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== About / basic information ==================== -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-reveal>01 · About me</p>
+          <h2 class="section-title" id="about-title" data-reveal>I love to code, and I care how it <em>feels</em> to use.</h2>
+        </header>
+
+        <div class="about__grid">
+          <div class="about__story">
+            <p class="about__lead" data-reveal>I love to code. What began as curiosity about how websites work became the part of my day I look forward to most: taking a messy, real-world problem and shaping it into something people enjoy using.</p>
+            <p data-reveal>As lead developer of our capstone, ARMS, I've built everything from the database models to the dashboards school heads read every quarter. I'm happiest where design meets engineering, and because the systems I build hold real people's records, I take security as seriously as the pixels.</p>
+
+            <figure class="objective" data-reveal>
+              <figcaption class="objective__label"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg>Career objective</figcaption>
+              <blockquote class="objective__text">
+                <p>To grow as a full-stack developer through an internship or junior role where I can design intuitive interfaces, build secure and reliable web applications, and learn from an experienced team while contributing from day one.</p>
+              </blockquote>
+            </figure>
+          </div>
+
+          <aside class="info-card" aria-labelledby="info-title" data-reveal>
+            <h3 class="info-card__title" id="info-title">Basic information</h3>
+            <dl class="info-list">
+              <div class="info-list__row"><dt>Full name</dt><dd>Yocoharen B. Takashie</dd></div>
+              <div class="info-list__row"><dt>Location</dt><dd>Davao City, Philippines</dd></div>
+              <div class="info-list__row"><dt>Email</dt><dd><a href="mailto:yocoharen24@gmail.com">yocoharen24@gmail.com</a></dd></div>
+              <div class="info-list__row"><dt>Phone</dt><dd><a href="tel:+639922768218">+63 992 276 8218</a></dd></div>
+              <div class="info-list__row"><dt>Program</dt><dd>BS Information Technology</dd></div>
+              <div class="info-list__row"><dt>Year level</dt><dd>4th Year</dd></div>
+            </dl>
+
+            <h3 class="info-card__subtitle">Career interests</h3>
+            <ul class="interests" role="list">
+              <li class="interest"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg>UI/UX Design</li>
+              <li class="interest"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Cybersecurity</li>
+              <li class="interest"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>Full-Stack Development</li>
+              <li class="interest"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg>AI-Powered Systems</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
     </section>
   </main>
 </body>
