@@ -18,7 +18,7 @@ A personal CV website for **Yocoharen Takashie**, a fourth-year BS Information T
 | 03 | Skills | Technical skills with animated progress bars, everyday tools, soft skills |
 | 04 | Projects | ARMS (capstone), Campus Store POS Kiosk and Monora, with screenshots and links |
 | 05 | Experience | Lead full-stack developer on the ARMS capstone; freelance data entry and lead generation |
-| 06 | Certificates | Cisco CCNA: Switching, Routing, and Wireless Essentials; AI capstone seminar; With Honors |
+| 06 | Certificates | Cisco CCNA: Switching, Routing, and Wireless Essentials; AI for Innovation of Capstone Projects seminar |
 | 07 | Contact | Email, phone, location, GitHub and LinkedIn profiles, message form |
 
 ## Features

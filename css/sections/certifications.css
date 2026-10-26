@@ -14,12 +14,6 @@
   }
 }
 
-@media (min-width: 64em) {
-  .certs__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 /* ---- Card --------------------------------------------------------------- */
 
 .cert {
@@ -42,8 +36,9 @@
 .cert__thumb {
   position: relative;
   display: grid;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);   /* a fixed-size cell, so the image can fit inside it */
   place-items: center;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
   overflow: hidden;
   border-bottom: 1px solid var(--line);
@@ -102,44 +97,6 @@
 
 .cert__thumb:focus-visible {
   outline-offset: -4px;
-}
-
-/* Medal artwork for the award card */
-.cert__thumb--award {
-  align-content: center;
-  gap: 1.25rem;
-  background:
-    radial-gradient(circle at 50% 38%, rgba(169, 181, 223, 0.45), transparent 62%),
-    var(--navy);
-  color: var(--blush);
-}
-
-.cert__medal {
-  display: grid;
-  place-items: center;
-  width: 5.5rem;
-  height: 5.5rem;
-  border-radius: 50%;
-  background: var(--blush);
-  color: var(--navy);
-  box-shadow: 0 0 0 10px rgba(255, 242, 242, 0.12), 0 0 0 22px rgba(255, 242, 242, 0.05);
-  transition: rotate 0.6s var(--ease-out), scale 0.6s var(--ease-out);
-}
-
-.cert__medal .icon {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-.cert:hover .cert__medal {
-  rotate: -10deg;
-  scale: 1.06;
-}
-
-.cert__award-text {
-  font-family: var(--font-display);
-  font-size: var(--step-2);
-  font-style: italic;
 }
 
 .cert__body {
