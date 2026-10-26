@@ -39,6 +39,7 @@
 .timeline__item {
   position: relative;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.75rem;
   padding-left: 2.25rem;
 }

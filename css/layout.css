@@ -2,6 +2,13 @@
    Layout: section spacing, section headings and the section themes
    ========================================================================== */
 
+/* Trims decorative overflow (hover highlights, offset frames) at the screen
+   edges. On <body> this would be handed to the viewport instead, and mobile
+   Chrome would still widen the page; `clip` also keeps sticky elements working. */
+main {
+  overflow-x: clip;
+}
+
 .section {
   position: relative;
   padding-block: var(--section-pad);
@@ -34,6 +41,7 @@
 
 .section-head {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.25rem;
   margin-bottom: clamp(2.75rem, 2rem + 3vw, 4.5rem);
 }

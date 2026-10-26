@@ -4,6 +4,7 @@
 
 .skill-groups {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
 }
 
@@ -134,6 +135,7 @@
 
 .skills__extras {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
@@ -172,11 +174,6 @@
   pointer-events: none;
 }
 
-.chip-list {
-  position: relative;
-  z-index: 1;
-}
-
 .soft-skills {
   border: 1px solid var(--line);
   background: var(--surface);
@@ -198,6 +195,8 @@
 }
 
 .chip-list {
+  position: relative;
+  z-index: 1;   /* above the faint code mark */
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;

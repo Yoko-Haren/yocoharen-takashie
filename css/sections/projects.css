@@ -142,8 +142,11 @@
 
 /* ---- Featured project --------------------------------------------------- */
 
+/* minmax(0, 1fr) lets single-column grids shrink below their content's
+   natural width instead of pushing past the screen edge on small phones */
 .project--featured {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(2rem, 1.5rem + 2vw, 3.5rem);
   align-items: center;
   padding: clamp(1.25rem, 0.75rem + 2vw, 2.75rem);
@@ -160,6 +163,7 @@
 
 .project__visual {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1rem;
 }
 
@@ -191,6 +195,20 @@
   font-size: 0.8rem;
   line-height: 1.35;
   color: var(--ink-soft);
+}
+
+@media (max-width: 30em) {
+  .project__stats {
+    gap: 0.5rem;
+  }
+
+  .project__stats div {
+    padding: 0.8rem 0.75rem;
+  }
+
+  .project__stats dt {
+    font-size: 0.72rem;
+  }
 }
 
 .project--featured .project__title {
@@ -254,6 +272,7 @@
 
 .projects__grid {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
   margin-top: 1.5rem;
 }

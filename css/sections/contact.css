@@ -4,6 +4,7 @@
 
 .contact__grid {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(2rem, 1.5rem + 2vw, 3.5rem);
 }
 
@@ -63,9 +64,9 @@
 }
 
 .contact-item__value {
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 0.88rem + 0.35vw, 1.05rem);
   font-weight: 600;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;   /* the <wbr> before "@" is the preferred break */
   transition: color var(--dur-fast);
 }
 

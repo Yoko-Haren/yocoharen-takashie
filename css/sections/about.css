@@ -4,6 +4,7 @@
 
 .about__grid {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(2.5rem, 2rem + 3vw, 4.5rem);
   align-items: start;
 }
@@ -126,7 +127,7 @@
 
 .info-list dd {
   font-weight: 600;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 /* Underline that draws in on hover */

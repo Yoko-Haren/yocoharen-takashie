@@ -10,6 +10,7 @@
   position: relative;
   isolation: isolate;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.25rem;
   padding-block: clamp(2rem, 1.5rem + 2vw, 3rem);
   border-bottom: 1px solid var(--line-strong);

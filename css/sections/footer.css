@@ -130,6 +130,7 @@
   place-items: center;
   width: 3.25rem;
   height: 3.25rem;
+  border: 1px solid rgba(169, 181, 223, 0.4);   /* keeps it visible over navy sections */
   border-radius: 50%;
   background: var(--navy);
   color: var(--blush);
