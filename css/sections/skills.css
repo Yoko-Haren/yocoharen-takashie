@@ -1,0 +1,268 @@
+/* ==========================================================================
+   Skills: animated progress bars, toolbox chips and soft skills
+   ========================================================================== */
+
+.skill-groups {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 42em) {
+  .skill-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64em) {
+  .skill-groups {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---- Skill cards -------------------------------------------------------- */
+
+.skill-card {
+  padding: clamp(1.5rem, 1rem + 1.5vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  background: var(--surface);
+  box-shadow: var(--shadow-s);
+  transition: box-shadow var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
+}
+
+.skill-card:hover {
+  border-color: rgba(120, 134, 199, 0.45);
+  box-shadow: var(--shadow-m);
+}
+
+.skill-card__head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.skill-card__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.9rem;
+  background: var(--navy);
+  color: var(--blush);
+  transition: rotate var(--dur) var(--ease-out), background-color var(--dur);
+}
+
+.skill-card:hover .skill-card__icon {
+  rotate: -8deg;
+  background: var(--periwinkle-ink);
+}
+
+.skill-card__title {
+  font-size: var(--step-2);
+}
+
+.skill-card__note {
+  margin-top: 0.15rem;
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+
+/* ---- Bars --------------------------------------------------------------- */
+
+.skill-list {
+  display: grid;
+  gap: 1.3rem;
+}
+
+.skill {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  row-gap: 0.55rem;
+}
+
+.skill:nth-child(1) { --i: 0; }
+.skill:nth-child(2) { --i: 1; }
+.skill:nth-child(3) { --i: 2; }
+.skill:nth-child(4) { --i: 3; }
+
+.skill__name {
+  font-weight: 600;
+  font-size: 0.975rem;
+}
+
+.skill__value {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.skill__bar {
+  grid-column: 1 / -1;
+  height: 0.4rem;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: rgba(169, 181, 223, 0.35);
+}
+
+/* Full width without JavaScript; with it, the bar grows when the card shows */
+.skill__fill {
+  display: block;
+  width: calc(var(--level) * 100%);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--mist), var(--periwinkle) 45%, var(--navy));
+}
+
+.js-ready .skill__fill {
+  width: 0;
+  transition: width 1.4s var(--ease-out);
+  transition-delay: calc(var(--reveal-delay, 0ms) + var(--i, 0) * 120ms + 200ms);
+}
+
+.js-ready .is-visible .skill__fill {
+  width: calc(var(--level) * 100%);
+}
+
+/* ---- Toolbox and soft skills -------------------------------------------- */
+
+.skills__extras {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 64em) {
+  .skills__extras {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  }
+}
+
+.toolbox,
+.soft-skills {
+  padding: clamp(1.5rem, 1rem + 1.5vw, 2rem);
+  border-radius: var(--radius-l);
+}
+
+.toolbox {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+  color: var(--blush);
+}
+
+/* Faint code mark that fills the space under the chips */
+.toolbox::after {
+  content: "</>";
+  position: absolute;
+  right: -0.25rem;
+  bottom: -2.75rem;
+  font-family: var(--font-mono);
+  font-size: clamp(6rem, 4rem + 6vw, 10rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  color: rgba(169, 181, 223, 0.12);
+  pointer-events: none;
+}
+
+.chip-list {
+  position: relative;
+  z-index: 1;
+}
+
+.soft-skills {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-s);
+}
+
+.skills__subhead {
+  font-size: var(--step-2);
+}
+
+.skills__subnote {
+  margin-top: 0.15rem;
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+
+.toolbox .skills__subnote {
+  color: var(--on-dark-soft);
+}
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.chip {
+  padding: 0.45rem 0.95rem;
+  border: 1px solid rgba(169, 181, 223, 0.38);
+  border-radius: var(--radius-pill);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color var(--dur) var(--ease-out), color var(--dur) var(--ease-out), translate var(--dur) var(--ease-out);
+}
+
+.chip:hover {
+  translate: 0 -2px;
+  background: var(--blush);
+  color: var(--navy);
+}
+
+.soft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.soft-card {
+  display: flex;
+  gap: 0.9rem;
+  padding: 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: var(--blush);
+  transition: translate var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out), border-color var(--dur);
+}
+
+.soft-card:hover {
+  translate: 0 -3px;
+  border-color: rgba(120, 134, 199, 0.45);
+  box-shadow: var(--shadow-s);
+}
+
+.soft-card__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.8rem;
+  background: var(--mist);
+  color: var(--navy);
+}
+
+.soft-card__title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.soft-card p {
+  margin-top: 0.2rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
